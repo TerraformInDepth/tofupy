@@ -1,0 +1,46 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=67.0", "setuptools_scm[toml]>=7.1"]
+
+[project]
+authors = [{"name" = "Robert Hafner"}]
+description = "A wrapper library around OpenTofu (and Terraform)"
+dynamic = ["version"]
+license = {"file" = "LICENSE"}
+name = "tofu_pie"
+readme = {file = "README.md", content-type = "text/markdown"}
+dependencies = [
+  "pydantic~=2.0",
+  "pydantic-settings"
+]
+
+[project.optional-dependencies]
+dev = [
+  "build",
+  "dapperdata",
+  "glom",
+  "mypy",
+  "pytest",
+  "pytest-cov",
+  "pytest-pretty",
+  "ruamel.yaml",
+  "ruff",
+  "toml-sort"
+]
+
+[tool.ruff]
+exclude = [".venv", "./tofu_pie/_version.py"]
+line-length = 120
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
+
+[tool.setuptools.package-data]
+tofu_pie = ["py.typed"]
+
+[tool.setuptools.packages]
+find = {}
+
+[tool.setuptools_scm]
+fallback_version = "0.0.0-dev"
+write_to = "tofu_pie/_version.py"
