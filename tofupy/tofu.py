@@ -58,8 +58,8 @@ class Tofu:
         self.cwd = str(cwd)
         self.log_level = log_level
         self.env = env
-        self.binary_path = shutil.which(binary)
-        if not self.binary_path:
+        self.binary_path = shutil.which(binary)  # type: ignore
+        if self.binary_path is None:
             raise FileNotFoundError(
                 f"Could not find {binary}, please make sure it is installed."
             )
@@ -107,22 +107,22 @@ class Tofu:
             timeout=None,
         )
 
-        results = CommandResults(
+        ret_results = CommandResults(
             command=" ".join(args),
             stdout=results.stdout,
             stderr=results.stderr,
             returncode=results.returncode,
         )
 
-        if raise_on_error and results.returncode != 0:
-            results.raise_error()
+        if raise_on_error and ret_results.returncode != 0:
+            ret_results.raise_error()
 
-        return results
+        return ret_results
 
     def _run_stream(
         self,
         args: List[str],
-    ) -> Generator[str, None, None]:
+    ) -> Generator[Dict[str, Any], None, None]:
         """_summary_
 
         Args:
@@ -232,7 +232,7 @@ class Tofu:
             plan_log = PlanLog(output)
 
             if plan_file.exists():
-                show_res = self._run(["show", "-json", plan_file])
+                show_res = self._run(["show", "-json", str(plan_file)])
                 return plan_log, Plan(show_res.json())
 
             return plan_log, None
@@ -251,7 +251,7 @@ class Tofu:
     ) -> ApplyLog:
         args = ["apply", "-auto-approve", "-json"] + extra_args
         if plan_file:
-            args += [plan_file]
+            args += [str(plan_file)]
 
         for key, value in variables.items():
             args += ["-var", f"{key}={value}"]
