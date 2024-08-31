@@ -161,4 +161,7 @@ cython_debug/
 #.idea/
 
 # scm-version file
-tofu_pie/_version.py
+tofupy/_version.py
+
+.terraform*
+*.tfstate

@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-PACKAGE_SLUG=tofu_pie
+PACKAGE_SLUG=tofupy
 ifdef CI
 	PYTHON_PYENV :=
 	PYTHON_VERSION := $(shell python --version|cut -d" " -f2)

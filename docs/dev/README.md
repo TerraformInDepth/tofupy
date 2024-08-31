@@ -3,5 +3,4 @@
 1. [Dependencies](./dependencies.md)
 1. [Github Actions](./github.md)
 1. [PyPI](./pypi.md)
-
-1. [Settings](./settings.md)
+1. [Tofu JSON Outputs](./tofu_ui.md)

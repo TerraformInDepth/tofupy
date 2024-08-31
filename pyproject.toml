@@ -4,15 +4,13 @@ requires = ["setuptools>=67.0", "setuptools_scm[toml]>=7.1"]
 
 [project]
 authors = [{"name" = "Robert Hafner"}]
+dependencies = []
 description = "A wrapper library around OpenTofu (and Terraform)"
 dynamic = ["version"]
 license = {"file" = "LICENSE"}
-name = "tofu_pie"
+name = "tofupy"
 readme = {file = "README.md", content-type = "text/markdown"}
-dependencies = [
-  "pydantic~=2.0",
-  "pydantic-settings"
-]
+requires-python = ">= 3.10"
 
 [project.optional-dependencies]
 dev = [
@@ -25,22 +23,29 @@ dev = [
   "pytest-pretty",
   "ruamel.yaml",
   "ruff",
-  "toml-sort"
+  "toml-sort",
+]
+
+[tool.coverage.run]
+omit = [
+  "./tofupy/_version.py",
+  "./tofupy/__init__.py",
+  "./examples/*",
 ]
 
 [tool.ruff]
-exclude = [".venv", "./tofu_pie/_version.py"]
-line-length = 120
+exclude = [".venv", "./tofupy/_version.py"]
+line-length = 88
 
 [tool.setuptools.dynamic]
 readme = {file = ["README.md"]}
 
 [tool.setuptools.package-data]
-tofu_pie = ["py.typed"]
+tofupy = ["py.typed"]
 
 [tool.setuptools.packages]
 find = {}
 
 [tool.setuptools_scm]
 fallback_version = "0.0.0-dev"
-write_to = "tofu_pie/_version.py"
+write_to = "tofupy/_version.py"
