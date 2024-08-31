@@ -23,14 +23,14 @@ dev = [
   "pytest-pretty",
   "ruamel.yaml",
   "ruff",
-  "toml-sort",
+  "toml-sort"
 ]
 
 [tool.coverage.run]
 omit = [
   "./tofupy/_version.py",
   "./tofupy/__init__.py",
-  "./examples/*",
+  "./examples/*"
 ]
 
 [tool.ruff]

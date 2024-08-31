@@ -70,7 +70,7 @@ dapperdata_fixes:
 
 .PHONY: tomlsort_fixes
 tomlsort_fixes:
-	$(PYTHON_ENV) toml-sort $$(find . -not -path "./.venv/*" -name "*.toml") -i
+	$(PYTHON_ENV) toml-sort $$(find . -not -path "*.venv/*" -name "*.toml") -i
 
 #
 # Testing

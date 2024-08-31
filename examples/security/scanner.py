@@ -10,7 +10,7 @@ app = typer.Typer()
 
 @app.command()
 def scan(
-    working_dir: Path = typer.Argument(help="Working directory", default=os.getcwd())
+    working_dir: Path = typer.Argument(help="Working directory", default=os.getcwd()),
 ):
     typer.echo(f"Scanning {working_dir}")
     tofu = Tofu(cwd=working_dir)
