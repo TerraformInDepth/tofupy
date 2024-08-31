@@ -17,6 +17,9 @@ jobs:
         with:
           python-version-file: .python-version
 
+      - name: Install OpenTofu
+        uses: opentofu/setup-opentofu@v1
+
       - name: Install Dependencies
         run: make install
 
