@@ -13,6 +13,44 @@ This project was built as an example for Chapter 11 of [Terraform in Depth](http
 - **Cross-Platform**: Works with both OpenTofu and Terraform binaries
 - **Production Ready**: Used in real-world scenarios with comprehensive error handling
 
+## Documentation
+
+- [TofuPy](#tofupy)
+  - [Features](#features)
+  - [Documentation](#documentation)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+  - [Core Concepts](#core-concepts)
+    - [The Tofu Class](#the-tofu-class)
+    - [Structured Data Models](#structured-data-models)
+  - [Detailed Usage Examples](#detailed-usage-examples)
+    - [Infrastructure Lifecycle Management](#infrastructure-lifecycle-management)
+      - [Initialization](#initialization)
+      - [Configuration Validation](#configuration-validation)
+      - [Planning Changes](#planning-changes)
+      - [Applying Changes](#applying-changes)
+      - [Managing State](#managing-state)
+      - [Getting Outputs](#getting-outputs)
+      - [Destroying Infrastructure](#destroying-infrastructure)
+    - [Event Handling and Real-time Monitoring](#event-handling-and-real-time-monitoring)
+    - [Advanced Use Cases](#advanced-use-cases)
+      - [Infrastructure Security Scanning](#infrastructure-security-scanning)
+      - [Multi-Environment Management](#multi-environment-management)
+      - [State Analysis and Reporting](#state-analysis-and-reporting)
+      - [Custom Validation and Policy Checks](#custom-validation-and-policy-checks)
+  - [Error Handling](#error-handling)
+  - [Configuration Options](#configuration-options)
+    - [Environment Variables](#environment-variables)
+    - [Binary Selection](#binary-selection)
+    - [Logging and Debugging](#logging-and-debugging)
+  - [API Reference](#api-reference)
+    - [Tofu Class](#tofu-class)
+    - [Data Models](#data-models)
+  - [Requirements](#requirements)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+
 ## Installation
 
 Either `tofu` or `terraform` must be installed and available in your PATH.
