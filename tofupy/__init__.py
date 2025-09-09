@@ -19,3 +19,18 @@ from .schema import (  # noqa: F401
     Validate,
 )
 from .tofu import Tofu  # noqa: F401
+
+__all__ == [
+    "ApplyLog",
+    "Change",
+    "ChangeContainer",
+    "Diagnostic",
+    "Module",
+    "Output",
+    "Plan",
+    "PlanLog",
+    "Resource",
+    "State",
+    "Validate",
+    "Tofu",
+]
