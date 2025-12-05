@@ -157,6 +157,7 @@ class Tofu:
             cwd=self.cwd,
             stdout=subprocess.PIPE,
             capture_output=False,
+            stderr=subprocess.PIPE,
             universal_newlines=True,
             encoding="utf-8",
             bufsize=1,
