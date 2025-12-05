@@ -276,9 +276,9 @@ class StreamLog:
 
             if line.get("type") == "diagnostic":
                 if line.get("@level") == "error":
-                    self.errors.append(Diagnostic(line))
+                    self.errors.append(Diagnostic(line.get("diagnostic", {})))
                 if line.get("@level") == "warning":
-                    self.warnings.append(Diagnostic(line))
+                    self.warnings.append(Diagnostic(line.get("diagnostic", {})))
                 continue
 
             if line.get("type") == "outputs":
