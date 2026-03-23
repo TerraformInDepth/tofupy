@@ -22,7 +22,7 @@ jobs:
           python-version: ${{ matrix.version }}
 
       - name: Install OpenTofu
-        uses: opentofu/setup-opentofu@v1
+        uses: opentofu/setup-opentofu@v2
         with:
           tofu_wrapper: false
 
